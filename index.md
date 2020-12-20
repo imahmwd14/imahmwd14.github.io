@@ -57,6 +57,8 @@
                 $('#revoke-access-button').click(function () {
                     revokeAccess();
                 });
+
+                
             });
         }
 
