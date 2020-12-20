@@ -31,7 +31,17 @@
         function loadClient() {
             gapi.client.setApiKey(API_KEY);
             return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-                .then(function () { console.log("GAPI client loaded for API"); },
+                .then(function () {
+                    console.log("GAPI client loaded for API");
+
+                    // Example 1: Use method-specific function
+                    var request = gapi.client.youtube.channels.list({ 'part': 'snippet', 'mine': 'true' });
+
+                    // Execute the API request.
+                    request.execute(function (response) {
+                        document.writeln(response);
+                    });
+                },
                     function (err) { console.error("Error loading GAPI client for API", err); });
         }
         // Make sure the client is loaded and sign-in is complete before calling this method.
