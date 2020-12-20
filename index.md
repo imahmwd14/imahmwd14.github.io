@@ -19,16 +19,6 @@
     </script>
 
     <script>
-
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const API_KEY = urlParams.get('key');
-        const CLEINT_ID = urlParams.get('id');
-
-        if (API_KEY.length < 1) {
-            console.error("no Key");
-        }
-
         var GoogleAuth;
         var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl';
         function handleClientLoad() {
@@ -112,7 +102,7 @@
     <hr>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
+
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
         </script>
