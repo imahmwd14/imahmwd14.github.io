@@ -91,7 +91,7 @@
         }
 
         function list(){
-            alert("Allah");
+            gapi.client.youtube.videos();
         }
     </script>
 
@@ -101,13 +101,14 @@
     <div id="auth-status" style="display: inline; padding-left: 25px"></div>
     <hr>
 
-    <button id="list_private_videos" onclick="list()">List</button>
+    <button id="list_private_videos" onclick="list()">List Private Videos</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script>
         $('#list_private_videos').css('margin-left', '25px');
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script async defer src="https://apis.google.com/js/api.js" onload="handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
         </script>
